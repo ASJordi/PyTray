@@ -70,3 +70,19 @@ def cpu_ram_usage():
         cpu_ram_toast.show()
     except Exception as e:
         logging.error(e)
+
+
+def weather():
+    try:
+        res = utils.get_weather()
+        weather_toast = Notification(app_id=app_name,
+                                     title="Weather",
+                                     msg=res,
+                                     duration="short",
+                                     icon=icon_path)
+
+        weather_toast.set_audio(audio.Default, loop=False)
+
+        weather_toast.show()
+    except Exception as e:
+        logging.error(e)

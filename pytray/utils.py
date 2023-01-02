@@ -53,6 +53,21 @@ def display_usage():
     return cpu_usage, memory_usage
 
 
+def get_weather():
+    load_dotenv()
+    api_key = os.environ['API_WEATHER']
+    city_name = os.environ['CITY_WEATHER']
+    response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}")
+    if response.status_code == 200:
+        data = response.json()
+        temperature_kelvin = data["main"]["temp"]
+        temperature_celsius = temperature_kelvin - 273.15
+        logging.info("Finished weather with values: %s", {"temperature": temperature_celsius})
+        return f"Temperatura de {temperature_celsius:.2f} °C"
+    else:
+        return f"Error: {response.status_code}"
+
+
 def bits_to_mb(size_bits):
     return round(size_bits / 8000000, 2)
 
