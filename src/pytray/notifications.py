@@ -4,7 +4,7 @@ import utils
 from winotify import Notification, audio
 
 username = os.getlogin()
-icon_path = fr"C:\Users\{username}\Documents\PyTray\pytray\images\icon.png"
+icon_path = fr"C:\Users\{username}\Documents\PyTray\src\pytray\images\icon.png"
 app_name = "PyTray"
 
 

@@ -76,3 +76,4 @@ stdout.txt
 stderr.txt
 run.bat
 .env
+pytray.egg-info

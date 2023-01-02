@@ -9,9 +9,9 @@ username = os.getlogin()
 
 
 def main():
-    image = PIL.Image.open(fr'C:\Users\{username}\Documents\PyTray\pytray\images\icon.png')
+    image = PIL.Image.open(fr'C:\Users\{username}\Documents\PyTray\src\pytray\images\icon.png')
 
-    logging.basicConfig(filename=fr'C:\Users\{username}\Documents\PyTray\pytray\logs\main.log', level=logging.INFO, format='%(message)s %(asctime)s',
+    logging.basicConfig(filename=fr'C:\Users\{username}\Documents\PyTray\src\pytray\logs\main.log', level=logging.INFO, format='%(message)s %(asctime)s',
                         datefmt='%m/%d/%Y %I:%M:%S')
     logging.info("Started pytray")
 

@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+
+from setuptools import find_packages, setup
+
+setup(
+  name="pytray",
+  author="Jordi Ayala",
+  author_email="me@asjordi.dev",
+  python_requires=">=3.8",
+  description="System tray utilities application",
+  long_description=open("README.md").read(),
+  long_description_content_type="text/markdown",
+  entry_points={"console_scripts": ["pytray=pytray.main:main"]},
+  install_requires=[
+    "attrs",
+    "certifi",
+    "charset-normalizer",
+    "colorama",
+    "exceptiongroup",
+    "idna",
+    "iniconfig",
+    "packaging",
+    "Pillow",
+    "pluggy",
+    "psutil",
+    "pystray",
+    "pytest",
+    "python-dotenv",
+    "requests",
+    "six",
+    "speedtest-cli",
+    "tomli",
+    "urllib3",
+    "winotify",
+  ],
+  keywords="system, tray, app",
+  packages=find_packages(where="src"),
+  package_dir={"": "src", "pytray": "src/pytray"},
+  url="https://github.com/ASJordi/PyTray",
+  version="0.0.1",
+)
