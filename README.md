@@ -1,7 +1,7 @@
 <div align="center">
 <!-- Title: -->
   <a href="https://github.com/ASJordi/PyTray">
-    <img src="./pytray/images/icon.png" height="100">
+    <img src="./src/pytray/images/icon.png" height="100">
   </a>
   <h1><a href="https://github.com/ASJordi/PyTray">PyTray</a></h1>
 <!-- Labels: -->
@@ -36,5 +36,5 @@ System tray utility application that allows you to run a series of shortcuts for
 
 <div align="center">
 <!-- Gif: -->
-  <img src="./pytray/images/pytray.gif" height="180">
+  <img src="./src/pytray/images/pytray.gif" height="180">
 </div>
