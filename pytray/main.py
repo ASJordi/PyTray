@@ -26,7 +26,8 @@ def main():
         )),
         pystray.MenuItem("Utils", pystray.Menu(
             pystray.MenuItem("Speedtest", notifications.speedtest),
-            pystray.MenuItem("Internet Availability", notifications.internet_availability)
+            pystray.MenuItem("Internet Availability", notifications.internet_availability),
+            pystray.MenuItem("CPU | RAM Usage", notifications.cpu_ram_usage),
         )),
         pystray.MenuItem('About', notifications.about),
         pystray.MenuItem('Exit', on_quit)

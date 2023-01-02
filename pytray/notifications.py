@@ -54,3 +54,19 @@ def internet_availability():
         is_online_toast.show()
     except Exception as e:
         logging.error(e)
+
+
+def cpu_ram_usage():
+    try:
+        cpu_usage, memory_usage = utils.display_usage()
+        cpu_ram_toast = Notification(app_id=app_name,
+                                     title="CPU | RAM Usage",
+                                     msg=f"CPU: {cpu_usage}%\nRAM: {memory_usage}%",
+                                     duration="short",
+                                     icon=icon_path)
+
+        cpu_ram_toast.set_audio(audio.Default, loop=False)
+
+        cpu_ram_toast.show()
+    except Exception as e:
+        logging.error(e)
