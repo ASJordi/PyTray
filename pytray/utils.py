@@ -22,6 +22,20 @@ def test_speed():
         logging.error(e)
 
 
+def have_internet() -> bool:
+    logging.info("Checking internet connection")
+    conn = httplib.HTTPSConnection("8.8.4.4", timeout=5)
+    try:
+        conn.request("HEAD", "/")
+        logging.info("Internet connection is available")
+        return True
+    except Exception as e:
+        logging.error("Internet connection is not available %s", e)
+        return False
+    finally:
+        conn.close()
+        
+
 def bits_to_mb(size_bits):
     return round(size_bits / 8000000, 2)
 

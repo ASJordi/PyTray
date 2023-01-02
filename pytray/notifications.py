@@ -38,3 +38,19 @@ def speedtest():
         speed_toast.show()
     except Exception as e:
         logging.error(e)
+
+
+def internet_availability():
+    try:
+        result = utils.have_internet()
+        is_online_toast = Notification(app_id=app_name,
+                                       title="Internet Connection",
+                                       msg="Is Available" if result else "Not Available",
+                                       duration="short",
+                                       icon=icon_path)
+
+        is_online_toast.set_audio(audio.Default, loop=False)
+
+        is_online_toast.show()
+    except Exception as e:
+        logging.error(e)
