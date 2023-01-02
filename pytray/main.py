@@ -24,6 +24,9 @@ def main():
             pystray.MenuItem('Terminal', on_launch),
             pystray.MenuItem('Intellij', on_launch)
         )),
+        pystray.MenuItem("Utils", pystray.Menu(
+            pystray.MenuItem("Speedtest", notifications.speedtest)
+        )),
         pystray.MenuItem('About', notifications.about),
         pystray.MenuItem('Exit', on_quit)
     ))
