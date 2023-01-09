@@ -86,3 +86,19 @@ def weather():
         weather_toast.show()
     except Exception as e:
         logging.error(e)
+
+
+def get_ip():
+    try:
+        ip = utils.get_ip_address()
+        ip_toast = Notification(app_id=app_name,
+                                title="IP Address",
+                                msg=ip,
+                                duration="short",
+                                icon=icon_path)
+
+        ip_toast.set_audio(audio.Default, loop=False)
+
+        ip_toast.show()
+    except Exception as e:
+        logging.error(e)

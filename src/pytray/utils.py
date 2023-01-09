@@ -4,6 +4,7 @@ import psutil
 import speedtest
 import http.client as httplib
 import requests
+import socket
 from dotenv import load_dotenv
 
 
@@ -66,6 +67,13 @@ def get_weather():
         return f"Temperatura de {temperature_celsius:.2f} °C"
     else:
         return f"Error: {response.status_code}"
+
+
+def get_ip_address():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    logging.info("Got IP address: %s", s.getsockname()[0])
+    return s.getsockname()[0]
 
 
 def bits_to_mb(size_bits):

@@ -28,7 +28,8 @@ def main():
             pystray.MenuItem("Speedtest", notifications.speedtest),
             pystray.MenuItem("Internet Availability", notifications.internet_availability),
             pystray.MenuItem("CPU | RAM Usage", notifications.cpu_ram_usage),
-            pystray.MenuItem("Weather", notifications.weather)
+            pystray.MenuItem("Weather", notifications.weather),
+            pystray.MenuItem("Get IP", notifications.get_ip),
         )),
         pystray.MenuItem('About', notifications.about),
         pystray.MenuItem('Exit', on_quit)
