@@ -22,7 +22,8 @@ def main():
             pystray.MenuItem('Brave', on_launch),
             pystray.MenuItem('VS-Code', on_launch),
             pystray.MenuItem('Terminal', on_launch),
-            pystray.MenuItem('Intellij', on_launch)
+            pystray.MenuItem('Intellij', on_launch),
+            pystray.MenuItem('PyCharm', on_launch)
         )),
         pystray.MenuItem("Utils", pystray.Menu(
             pystray.MenuItem("Speedtest", notifications.speedtest),
@@ -59,6 +60,9 @@ def on_launch(icon, item):
         elif str(item) == "Intellij":
             os.startfile(r"C:\Program Files\JetBrains\IntelliJ IDEA 2022.2\bin\idea64.exe")
             logging.info("Launched Intellij")
+        elif str(item) == "PyCharm":
+            os.startfile(r"C:\Program Files\JetBrains\PyCharm 2022.2\bin\pycharm64.exe")
+            logging.info("Launched PyCharm")
         else:
             logging.info("Not implemented yet")
     except Exception as e:
