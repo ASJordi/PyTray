@@ -9,10 +9,10 @@ username = os.getlogin()
 
 
 def main():
-    image = PIL.Image.open(fr'C:\Users\{username}\Documents\PyTray\src\pytray\images\icon.png')
+    image = PIL.Image.open(fr'Z:\code\python\PyTray\src\pytray\images\icon.png')
 
-    logging.basicConfig(filename=fr'C:\Users\{username}\Documents\PyTray\src\pytray\logs\main.log', level=logging.INFO, format='%(message)s %(asctime)s',
-                        datefmt='%m/%d/%Y %I:%M:%S')
+    logging.basicConfig(filename=fr'Z:\code\python\PyTray\src\pytray\logs\main.log', level=logging.INFO,
+                        format='%(message)s %(asctime)s', datefmt='%m/%d/%Y %I:%M:%S')
     logging.info("Started pytray")
 
     icon = pystray.Icon("PyTray", image, "PyTray", menu=pystray.Menu(
@@ -55,10 +55,11 @@ def on_launch(icon, item):
             os.startfile(fr"C:\Users\{username}\AppData\Local\Programs\Microsoft VS Code\Code.exe")
             logging.info("Launched VS-Code")
         elif str(item) == "Terminal":
-            os.startfile(fr"C:\Users\{username}\AppData\Local\Microsoft\WindowsApps\Microsoft.WindowsTerminal_8wekyb3d8bbwe\wt.exe")
+            os.startfile(
+                fr"C:\Users\{username}\AppData\Local\Microsoft\WindowsApps\Microsoft.WindowsTerminal_8wekyb3d8bbwe\wt.exe")
             logging.info("Launched Terminal")
         elif str(item) == "Intellij":
-            os.startfile(r"C:\Program Files\JetBrains\IntelliJ IDEA 2022.2\bin\idea64.exe")
+            os.startfile(r"C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.2\bin\idea64.exe")
             logging.info("Launched Intellij")
         elif str(item) == "PyCharm":
             os.startfile(r"C:\Program Files\JetBrains\PyCharm 2022.2\bin\pycharm64.exe")
@@ -68,7 +69,7 @@ def on_launch(icon, item):
     except Exception as e:
         logging.error(e)
 
-        
+
 def on_quit(icon):
     try:
         logging.info("Exited pytray")
