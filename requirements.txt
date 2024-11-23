@@ -1,0 +1,13 @@
+charset-normalizer==3.4.0
+idna==3.10
+Pillow==11.0.0
+psutil==6.1.0
+pystray==0.19.5
+pytest_mock==3.14.0
+python-dotenv==1.0.1
+Requests==2.32.3
+setuptools==70.2.0
+six==1.16.0
+speedtest==0.0.1
+urllib3==2.2.3
+winotify==1.1.0
